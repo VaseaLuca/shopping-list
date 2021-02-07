@@ -9,6 +9,7 @@ import Menu from './Menu';
 
 const App = () => {
   const [listOfProducts, setListOfProducts] = useState([]);
+
   const [cart, setCart] = useState([]);
   let location = useLocation();
 
@@ -59,6 +60,26 @@ const App = () => {
       setCart([...updatedItem]);
     }
   }
+  function handleAscPrice(){
+    let ascItem = [...listOfProducts];
+    ascItem.sort((a, b) => (a.price > b.price) ? 1 : -1);
+    setListOfProducts([...ascItem])
+  }
+  function handleDescPrice(){
+    let ascItem = [...listOfProducts];
+    ascItem.sort((a, b) => (a.price > b.price ? -1 : 1));
+    setListOfProducts([...ascItem]);
+  }
+  function handleAscCategory(){
+    let ascName = [...listOfProducts];
+    ascName.sort((a, b) => (a.category.name > b.category.name ? 1 : -1));
+    setListOfProducts([...ascName]);
+  }
+  function handleDescCategory(){
+    let descName = [...listOfProducts];
+    descName.sort((a, b) => (a.category.name > b.category.name ? -1 : 1));
+    setListOfProducts([...descName]);
+  }
   return (
     <div style={{ height: '100vh' }}>
       <Menu location={location} length={cart.length} />
@@ -72,7 +93,11 @@ const App = () => {
             actions="Actions"
             action="Select"
             location={location}
+            handleAscCategory={handleAscCategory}
+            handleDescCategory={handleDescCategory}
+            handleAscPrice={handleAscPrice}
             listOfProducts={listOfProducts}
+            handleDescPrice={handleDescPrice}
             handleAddToCard={handleAddToCard}
             handleDecreaseItem={handleDecreaseItem}
           />
@@ -89,10 +114,14 @@ const App = () => {
             actions="Actions"
             total="Total"
             action="Remove"
-            location={location}
             listOfProducts={cart}
-            handleRemoveItem={handleRemoveItem}
+            location={location}
+            handleAscCategory={handleAscCategory}
+            handleDescCategory={handleDescCategory}
+            handleAscPrice={handleAscPrice}
             handleAddToCard={handleAddToCard}
+            handleDescPrice={handleDescPrice}
+            handleRemoveItem={handleRemoveItem}
             handleDecreaseItem={handleDecreaseItem}
           />
         )}

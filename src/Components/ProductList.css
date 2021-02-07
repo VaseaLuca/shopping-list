@@ -4,22 +4,18 @@ table {
   margin: 20px;
   font-size: calc(14px + 0.2vw);
 }
-
 th,
 td {
   padding: 15px;
   border: 1px solid black;
 }
-
 .product-select {
   margin: auto 0;
 }
-
 .product-select {
   color: #2e76cf;
   cursor: pointer;
 }
-
 .product-subtract,
 .product-add {
   padding: 2px;

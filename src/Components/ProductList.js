@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{ useState } from 'react';
 
 import './ProductList.css';
 
@@ -16,18 +16,38 @@ const ProductList = ({
   handleAddToCard,
   handleRemoveItem,
   handleDecreaseItem,
+  handleAscPrice,
+  handleDescPrice,
+  handleAscCategory,
+  handleDescCategory,
 }) => {
   let pathName = location.pathname;
+  const [sortPrice, setSortPrice] = useState(true);
+  const [sortCategory, setSortCategory] = useState(true);
+
+  function handleSortPrice() {
+    setSortPrice(!sortPrice);
+    return sortPrice ? handleAscPrice() : handleDescPrice();
+  }
+  function handleSortCategory() {
+    setSortCategory(!sortCategory);
+    return sortCategory ? handleAscCategory() : handleDescCategory();
+  }
+
   return (
     <div>
       <div style={{ display: 'flex', flexDirection: 'column', margin: '50px 0 0 0' }}>
         <table style={{ textAlign: 'center' }}>
           <thead>
             <tr>
-              <th>{category}</th>
+              <th onClick={() => handleSortCategory()} style={{ cursor: 'pointer' }}>
+                {`${category}${sortCategory ? '↑' : '↓'}`}
+              </th>
               <th>{name}</th>
               {quantity && <th>{quantity}</th>}
-              <th>{price}</th>
+              <th onClick={() => handleSortPrice()} style={{ cursor: 'pointer' }}>
+                {`${price}${sortPrice ? '↑' : '↓'}`}
+              </th>
               <th>{actions}</th>
               {total && <th>{total}</th>}
             </tr>
