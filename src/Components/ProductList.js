@@ -27,7 +27,6 @@ const ProductList = ({
     setSortPrice((sortPrice)=> !sortPrice);
     return sortPrice ? handleAscPrice() : handleDescPrice();
   }
-    console.log(sortPrice);
   function handleSortCategory() {
     setSortCategory((sortCategory) => !sortCategory);
     return sortCategory ? handleAscCategory() : handleDescCategory();

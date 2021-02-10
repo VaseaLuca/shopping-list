@@ -25,7 +25,7 @@ const App = () => {
     if (!exist) {
       let total = item.price;
       let newItem = { ...item, total, count: 1 };
-      setCart([...cart, newItem]);
+      setCart((cart) => [...cart, newItem]);
     } else {
       let updatedItem = cart.map((element) => {
         let count = element.count + 1;
