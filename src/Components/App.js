@@ -1,17 +1,14 @@
-import React, {useState,useEffect} from 'react';
-import {Route,useLocation } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { Route, useLocation } from 'react-router-dom';
 import ProductList from './ProductList';
 import CartPage from './ProductList';
 import axios from 'axios';
 import Menu from './Menu';
 
-
-
 const App = () => {
   const [listOfProducts, setListOfProducts] = useState([]);
-
   const [cart, setCart] = useState([]);
-  let location = useLocation();
+  const location = useLocation();
 
   useEffect(() => {
     async function fetchListofProducts() {
@@ -60,22 +57,22 @@ const App = () => {
       setCart([...updatedItem]);
     }
   }
-  function handleAscPrice(){
+  function handleAscPrice() {
     let ascItem = [...listOfProducts];
-    ascItem.sort((a, b) => (a.price > b.price) ? 1 : -1);
-    setListOfProducts([...ascItem])
+    ascItem.sort((a, b) => (a.price > b.price ? 1 : -1));
+    setListOfProducts([...ascItem]);
   }
-  function handleDescPrice(){
+  function handleDescPrice() {
     let ascItem = [...listOfProducts];
     ascItem.sort((a, b) => (a.price > b.price ? -1 : 1));
     setListOfProducts([...ascItem]);
   }
-  function handleAscCategory(){
+  function handleAscCategory() {
     let ascName = [...listOfProducts];
     ascName.sort((a, b) => (a.category.name > b.category.name ? 1 : -1));
     setListOfProducts([...ascName]);
   }
-  function handleDescCategory(){
+  function handleDescCategory() {
     let descName = [...listOfProducts];
     descName.sort((a, b) => (a.category.name > b.category.name ? -1 : 1));
     setListOfProducts([...descName]);

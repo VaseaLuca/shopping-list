@@ -1,7 +1,5 @@
-import React,{ useState } from 'react';
-
+import React, { useState } from 'react';
 import './ProductList.css';
-
 
 const ProductList = ({
   category,
@@ -26,14 +24,14 @@ const ProductList = ({
   const [sortCategory, setSortCategory] = useState(true);
 
   function handleSortPrice() {
-    setSortPrice(!sortPrice);
+    setSortPrice((sortPrice)=> !sortPrice);
     return sortPrice ? handleAscPrice() : handleDescPrice();
   }
+    console.log(sortPrice);
   function handleSortCategory() {
-    setSortCategory(!sortCategory);
+    setSortCategory((sortCategory) => !sortCategory);
     return sortCategory ? handleAscCategory() : handleDescCategory();
   }
-
   return (
     <div>
       <div style={{ display: 'flex', flexDirection: 'column', margin: '50px 0 0 0' }}>
