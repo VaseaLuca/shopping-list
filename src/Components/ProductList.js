@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './ProductList.css';
 
-const ProductList = ({
+function ProductList({
   category,
   name,
   quantity,
@@ -18,13 +18,13 @@ const ProductList = ({
   handleDescPrice,
   handleAscCategory,
   handleDescCategory,
-}) => {
+}) {
   let pathName = location.pathname;
   const [sortPrice, setSortPrice] = useState(true);
   const [sortCategory, setSortCategory] = useState(true);
 
   function handleSortPrice() {
-    setSortPrice((sortPrice)=> !sortPrice);
+    setSortPrice((sortPrice) => !sortPrice);
     return sortPrice ? handleAscPrice() : handleDescPrice();
   }
   function handleSortCategory() {

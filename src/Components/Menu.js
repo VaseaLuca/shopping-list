@@ -2,8 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './Menu.css';
 
-const Menu = ({ location, length }) => {
-  let pathName = location.pathname;
+function Menu({ location, length }) {
+  const pathName = location.pathname;
 
   return (
     <div className="menu">

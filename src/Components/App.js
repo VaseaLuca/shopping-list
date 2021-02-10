@@ -5,7 +5,7 @@ import CartPage from './ProductList';
 import axios from 'axios';
 import Menu from './Menu';
 
-const App = () => {
+function App (){
   const [listOfProducts, setListOfProducts] = useState([]);
   const [cart, setCart] = useState([]);
   const location = useLocation();
