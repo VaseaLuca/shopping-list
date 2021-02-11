@@ -1,3 +1,4 @@
+![](https://github.com/VaseaLuca/shopping-list/blob/master/src/Components/assets/cart.gif)
 ### Getting started
 
 1. Start client using `yarn serve:client`
