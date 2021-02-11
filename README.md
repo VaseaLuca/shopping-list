@@ -1,10 +1,4 @@
-# Junior Javascript Developer (React)
-
-It's necessary to create React JS application, using only [Typescript](https://www.typescriptlang.org/), [React Router](https://reacttraining.com/react-router/web/guides/quick-start) and [React Context](https://reactjs.org/docs/context.html), that will show list of products and gets possibility for user adding desired products in his cart.
-
-Keep away from unnecessary dependecies, keep it simple.
-
-## Getting started
+### Getting started
 
 1. Start client using `yarn serve:client`
    it will start on [localhost:3000](http://localhost:3000)

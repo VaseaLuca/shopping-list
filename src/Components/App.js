@@ -24,7 +24,7 @@ function App (){
     });
     if (!exist) {
       let total = item.price;
-      let newItem = { ...item, total, count: 1 };
+      let newItem = {...item, total, count: 1};
       setCart((cart) => [...cart, newItem]);
     } else {
       let updatedItem = cart.map((element) => {
