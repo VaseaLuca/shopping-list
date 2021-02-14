@@ -44,7 +44,10 @@ function App (){
     const exist = cart.find((element) => {
       return element.id === item.id;
     });
-    if (exist.count === 1) {
+    if(!exist) {
+      alert('There is no such product in cart')
+    }
+    else if (exist.count === 1) {
       let updatedItem = cart.filter((element) => {
         return element.id !== item.id;
       });
